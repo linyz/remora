@@ -6,7 +6,7 @@
   - make chromosome bed files (for run mpileup in parallel)
    ./chrBed, chromosome length from GRCh38
 
-2. Run run_STAR.sh
+2. Run run_STAR.sh. 
     I put each pair of paired-end fastq.gz files in a subfolder
 ```
     for dir in ./*/
