@@ -1,20 +1,20 @@
 1. Make STAR index and other refs:
-- (optional for DE analysis) concat deaminases sequence with GRCh38
-- (optional for DE analysis) concat deaminases gtf annotation with gencode v40 basic gtf
-- samtools faidx
-- picard CreateSequenceDictionary
-- make chromosome bed files (for run mpileup in parallel)
+  - (optional for DE analysis) concat deaminases sequence with GRCh38
+  - (optional for DE analysis) concat deaminases gtf annotation with gencode v40 basic gtf
+  - samtools faidx
+  - picard CreateSequenceDictionary
+  - make chromosome bed files (for run mpileup in parallel)
    ./chrBed, chromosome length from GRCh38
 2. Run run_STAR.sh
     I put each pair of paired-end fastq.gz files in a subfolder
 ```
-for dir in ./*/
-do
-cd $dir
-echo $PWD
-qsub -cwd -pe smp 4 -l h_rt=336:00:00 -l mem_free=15G ../run_STAR.sh 
-cd ..
-done
+    for dir in ./*/
+    do
+    cd $dir
+    echo $PWD
+    qsub -cwd -pe smp 4 -l h_rt=336:00:00 -l mem_free=15G ../run_STAR.sh 
+    cd ..
+    done
 ```
 
 - STAR alignment: need to trim 3' illumina universal adapter
