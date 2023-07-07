@@ -4,12 +4,13 @@
     - samtools faidx
     - picard CreateSequenceDictionary
     - make chromosome bed files (for run mpileup in parallel)
-2. run run_STAR2.sh
+2. run run_STAR.sh
     - STAR alignment: need to trim 3' illumina universal adapter
     - samtools sorting etc
     - picard MarkDuplicate
     - gatk SplitNCigarReads
+    - split by read orientation
 3. Use Rsubreads for gene expression count and DE analysis
 4. run bcftools mpileup for variants calling
 5. Custom R script (vcf_preprocess.R) to reformat vcf files and annotate genes
-    - Remove ##contig lines to only keep chr1-23, X, Y, M; 
+    - If refs have extra chromosomes, remove ##contig lines to only keep chr1-23, X, Y, M;
