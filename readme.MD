@@ -15,3 +15,4 @@
 5. Custom R script (vcf_preprocess.R) to reformat vcf files and annotate genes
     - If refs have extra chromosomes, remove ##contig lines to only keep chr1-23, X, Y, M;
 6. concat all [strand_chr].vcf files for downstream editing site calling. (so multiple test correction is done tx-wide)
+7. Edit_call_cmh.R
