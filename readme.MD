@@ -1,10 +1,10 @@
 1. Making STAR index and other refs:
-    - concat deaminases sequence with GRCh38
-    - concat deaminases gtf annotation with gencode v40 basic gtf
+    - (optional for DE analysis) concat deaminases sequence with GRCh38
+    - (optional for DE analysis) concat deaminases gtf annotation with gencode v40 basic gtf
     - samtools faidx
     - picard CreateSequenceDictionary
     - make chromosome bed files (for run mpileup in parallel)
-        - ./chrBed, chromosome length from GRCh38
+        ./chrBed, chromosome length from GRCh38
 2. run run_STAR.sh
     - STAR alignment: need to trim 3' illumina universal adapter
     - samtools sorting etc
