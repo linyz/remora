@@ -8,7 +8,7 @@
 
 2. Run run_STAR.sh. 
     I put each pair of paired-end fastq.gz files in a subfolder
-```
+    ```
     for dir in ./*/
     do
     cd $dir
@@ -16,7 +16,7 @@
     qsub -cwd -pe smp 4 -l h_rt=336:00:00 -l mem_free=15G ../run_STAR.sh 
     cd ..
     done
-```
+    ```
 
     - STAR alignment: need to trim 3' illumina universal adapter
     - samtools sorting etc
